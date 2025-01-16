@@ -33,4 +33,4 @@ Pour tester ce site sur votre propre machine, vous pouvez cloner ce repository e
 
 1. Clonez ce repository :
    ```bash
-   git clone https://github.com/OmeGasther/Vtube.git
+   git clone https://github.com/OmeGasther/vtuber-site.git
