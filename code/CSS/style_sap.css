@@ -3,7 +3,7 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background: url('/code/doc/baniere_teste.webp') no-repeat center center fixed;
+    background: url('../doc/Sapphire_Illustration_background.webp') no-repeat center center fixed;
     background-size: cover;
     /* L'image couvre toute la fenêtre */
     color: #ffffff;

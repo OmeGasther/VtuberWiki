@@ -5,12 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wiki VTuber</title>
-    <!-- Correction du lien vers le fichier CSS -->
-    <link rel="stylesheet" href="code/CSS/style.css">
+    <link rel="stylesheet" href="/code/CSS/style.css">
+    <style>
+        .card {
+            opacity: 1;
+            transform: scale(1);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .card.hidden {
+            opacity: 0;
+            transform: scale(0.8);
+            pointer-events: none;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Particules -->
     <div class="particles">
         <span style="--i:1;"></span>
         <span style="--i:2;"></span>
@@ -22,7 +33,6 @@
         <span style="--i:8;"></span>
     </div>
 
-    <!-- Header -->
     <header>
         <nav class="navbar">
             <div class="logo">Wiki VTuber</div>
@@ -31,11 +41,11 @@
                 <li><a href="#about">À propos</a></li>
                 <li><a href="#vtubers">VTubers</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="./code/HTML/a propos.html">Commission</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Main -->
     <main>
         <section id="home" class="hero">
             <h1>Bienvenue sur le Wiki VTuber</h1>
@@ -50,47 +60,70 @@
 
         <section id="vtubers" class="vtubers">
             <h2>Nos VTubers</h2>
+            <label for="langue">Filtrer par langue :</label>
+            <select id="langue" onchange="filterVTubers()">
+                <option value="all">Toutes les langues</option>
+                <option value="fr">Français</option>
+                <option value="en">Anglais</option>
+                <option value="jp">Japonais</option>
+            </select>
+
             <div class="cards">
-                <!-- VTuber Card -->
-                <div class="card">
-                    <!-- Correction du lien vers la page Broken.html -->
-                    <a href="code/HTML/Broken.html">
-                        <img src="doc/Broken.png" alt="BrokenFox">
+                <div class="card" data-lang="fr">
+                    <a href="./code/HTML/Broken.html">
+                        <img src="/code/doc/Broken.png" alt="BrokenFox">
                         <h3>BrokenFox</h3>
-                        <p>Une renarde qui aime dessiner et jouer à divers jeux (horreur, survie, ...). Venez vous
-                            détendre et rire avec elle.</p>
+                        <p>Une renarde qui aime dessiner et jouer à divers jeux.</p>
                     </a>
                 </div>
-                <div class="card">
-                    <!-- Correction du lien vers la page kurai.html -->
-                    <a href="/code//HTML/kurai.html">
-                        <img src="doc/pOULPIE_kURAI.webp" alt="kuraitsuki">
+                <div class="card" data-lang="fr">
+                    <a href="./code/HTML/kurai.html">
+                        <img src="/code/doc/pOULPIE_kURAI.webp" alt="kuraitsuki">
                         <h3>kuraitsuki</h3>
-                        <p>✨ Toujours positif et joyeux, je ne rage jamais ! Mes parodies vont te faire rire, désolé
-                            d'avance pour ton Lore. ✨</p>
+                        <p>✨ Toujours positif et joyeux, je ne rage jamais !</p>
                     </a>
                 </div>
-                <div class="card">
+                <div class="card" data-lang="en">
+                    <a href="/code/HTML/Saphiechan.html">
+                        <img src="/code/doc/saphire.webp" alt="Sapphire_Chan321
+">
+                        <h3>Sapphire_Chan321</h3>
+                        <p>Wolf Spirit Vtuber EN ｜Singing, Collabs and Gaming｜【Vibes and Fun, Let’s Do It!】💜💎 ♡︎Hi
+                            guys 여보세요你好こんにちは♡︎</p>
+                    </a>
+                </div>
+                <div class="card" data-lang="jp">
                     <a href="#">
-                        <img src="vtuber3.jpg" alt="Nom du VTuber">
+                        <img src="" alt="">
                         <h3>Nom du VTuber</h3>
-                        <p>Courte description ou style de contenu.</p>
+                        <p>Japonais VTuber.</p>
                     </a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
         <p>© 2025 Wiki VTuber - Tous droits réservés</p>
     </footer>
 
-    <!-- Correction du lien vers le script JS -->
-    <script src="script.js"></script>
-    <!-- Correction du lien vers le fichier sakura.js -->
-    <script src="code/Java/sakura.js"></script>
+    <script>
+        function filterVTubers() {
+            let langue = document.getElementById("langue").value;
+            let cards = document.querySelectorAll(".cards .card");
 
+            cards.forEach(card => {
+                if (langue === "all" || card.getAttribute("data-lang") === langue) {
+                    card.classList.remove("hidden");
+                } else {
+                    card.classList.add("hidden");
+                }
+            });
+        }
+    </script>
+
+    <script src="script.js"></script>
+    <script src="/code/Java/sakura.js"></script>
 </body>
 
 </html>

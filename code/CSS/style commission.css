@@ -1,0 +1,132 @@
+/* --- Global Styles --- */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #2c003e, #6a0dad);
+    color: #e0c3fc;
+    overflow-x: hidden;
+    animation: fadeInBody 1.5s ease-in-out;
+    position: relative;
+    min-height: 100vh;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #b266ff;
+}
+
+.nav-links a {
+    color: #e0c3fc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.nav-links a:hover {
+    color: #d48eff;
+    transform: scale(1.1);
+    text-shadow: 0 0 10px #d48eff;
+}
+
+/* --- Hero Section --- */
+.hero {
+    background: rgba(80, 20, 100, 0.8);
+    padding: 100px 20px;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    color: #f6a9ff;
+    text-shadow: 0 0 15px #f6a9ff, 0 0 25px #9d4edd;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.hero .btn-primary {
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    color: #ffffff;
+    background-color: #9d4edd;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.hero .btn-primary:hover {
+    background-color: #7b2cbf;
+    transform: scale(1.1);
+}
+
+/* --- Cards Section --- */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+.card {
+    width: 250px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 10px 30px rgba(157, 78, 221, 0.8);
+}
+
+.card h3 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+    color: #e0c3fc;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #d48eff;
+    padding: 0 10px 20px;
+}
+
+/* --- Animations --- */
+@keyframes pulseText {
+
+    0%,
+    100% {
+        text-shadow: 0 0 15px #f6a9ff, 0 0 25px #9d4edd;
+    }
+
+    50% {
+        text-shadow: 0 0 25px #7b2cbf, 0 0 35px #f6a9ff;
+    }
+}
+
+@keyframes floatParticles {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
